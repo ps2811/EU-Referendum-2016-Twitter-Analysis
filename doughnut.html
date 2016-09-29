@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)http://127.0.0.1:23308/custom/googleVis/doughnut.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>doughnut</title>
+
+<style type="text/css">
+body {
+  color: #444444;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 75%;
+  }
+  a {
+  color: #4D87C7;
+  text-decoration: none;
+}
+</style>
+<script type="text/javascript" src="./doughnut_files/saved_resource"></script><style type="text/css"></style><link type="text/css" href="./doughnut_files/ui+en.css" rel="stylesheet"><script type="text/javascript" src="./doughnut_files/format+en,default+en,ui+en,corechart+en.I.js"></script><link href="./doughnut_files/tooltip.css" rel="stylesheet" type="text/css"></head>
+<body>
+ <!-- PieChart generated in R 3.2.3 by googleVis 0.5.10 package -->
+<!-- Fri Jun 24 11:13:47 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDatadoughnut () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "pro exit",
+1018 
+],
+[
+ "pro remain",
+670 
+] 
+];
+data.addColumn('string','Var1');
+data.addColumn('number','Freq');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartdoughnut() {
+var data = gvisDatadoughnut();
+var options = {};
+options["allowHtml"] = true;
+options["width"] =    500;
+options["height"] =    500;
+options["slices"] = {0: {offset: 0.2},
+                           1: {offset: 0.2},
+                           2: {offset: 0.2}};
+options["title"] = "EU Referendum 2016 - From Twitter Hashtags\n                           (Support: Remain in EU/Leave EU)";
+options["legend"] = "bottom";
+options["colors"] = ['black','red'];
+options["pieSliceText"] = "label";
+options["pieHole"] =    0.5;
+
+
+    var chart = new google.visualization.PieChart(
+    document.getElementById('doughnut')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartdoughnut);
+})();
+function displayChartdoughnut() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="./doughnut_files/jsapi"></script>
+ 
+<!-- divChart -->
+  
+<div id="doughnut" style="width: 500; height: 500;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 500px; height: 500px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="500" height="500" aria-label="A chart." style="overflow: hidden;"><defs id="defs"></defs><rect x="0" y="0" width="500" height="500" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><text text-anchor="start" x="96" y="56.05" font-family="Arial" font-size="13" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">EU Referendrum 2016 - From Twitter Hashtags</text><text text-anchor="start" x="96" y="73.05" font-family="Arial" font-size="13" font-weight="bold" stroke="none" stroke-width="0" fill="#000000">(Support: Remain in EU/Leave EU)</text><rect x="96" y="45" width="309" height="30" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><rect x="170" y="446" width="161" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><rect x="170" y="446" width="61" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="188" y="457.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#222222">pro exit</text></g><circle cx="176.5" cy="452.5" r="6.5" stroke="none" stroke-width="0" fill="#000000"></circle></g><g><rect x="252" y="446" width="79" height="13" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="270" y="457.05" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#222222">pro remain</text></g><circle cx="258.5" cy="452.5" r="6.5" stroke="none" stroke-width="0" fill="#ff0000"></circle></g></g><g><path d="M175.3442746971703,302.60589870967107L128.8876082517897,364.01256074875806A154,154,0,0,1,221.80094114255093,87.19923667058407L221.80094114255093,164.19923667058407A77,77,0,0,0,175.3442746971703,302.60589870967107" stroke="#ffffff" stroke-width="1" fill="#ff0000"></path><text text-anchor="start" x="87.04467773109606" y="210.75526757406848" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#ffffff">pro remain</text></g><g><path d="M280.1990588574491,183.80076332941593L280.1990588574491,106.80076332941593A154,154,0,1,1,187.28572596668786,383.6140874075899L233.74239241206845,322.2074253685029A77,77,0,1,0,280.1990588574491,183.80076332941593" stroke="#ffffff" stroke-width="1" fill="#000000"></path><text text-anchor="start" x="371.08468240999235" y="303.07337978238803" font-family="Arial" font-size="13" stroke="none" stroke-width="0" fill="#ffffff">pro exit</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Var1</th><th>Freq</th></tr></thead><tbody><tr><td>pro exit</td><td>1,018</td></tr><tr><td>pro remain</td><td>670</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 510px; left: 510px; white-space: nowrap; font-family: Arial; font-size: 13px; font-weight: bold;">1,018 (60.3%)</div><div></div></div></div>
+ <div><span>Data: dat • Chart ID: <a href="http://127.0.0.1:23308/custom/googleVis/Chart_doughnut.html">doughnut</a> • <a href="https://github.com/mages/googleVis">googleVis-0.5.10</a></span><br> 
+<!-- htmlFooter -->
+<span> 
+  R version 3.2.3 (2015-12-10) 
+  • <a href="https://developers.google.com/terms/">Google Terms of Use</a> • <a href="https://google-developers.appspot.com/chart/interactive/docs/gallery/piechart">Documentation and Data Policy</a>
+</span></div>
+
+
+</body></html>
